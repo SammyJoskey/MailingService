@@ -22,11 +22,5 @@ class ListMail(ListView):
     context_object_name = 'mails'
     template_name = 'list_mail.html'
 
-    # def get_queryset(self):
-    #     print(Mail.objects.all())
-    #     return Mail.objects.all()
 
-# def asdf(request):
-#     qw = send_mail('dfsdfsdfsd', 'fasdfasdfasd', '3434455@mail.ru', ['kalinkaufa@mail.ru'], fail_silently=False)
-#     return render(request, 'mailingapp/index1.html', context={'text': qw})
     
