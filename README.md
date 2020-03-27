@@ -1,2 +1,1 @@
-A heroku app will come in 24 hours.
-Sorry for that... 
+https://tortmailingapp.herokuapp.com/
