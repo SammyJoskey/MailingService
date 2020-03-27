@@ -3,13 +3,20 @@ from django.core.mail import send_mail
 from datetime import timedelta, datetime, timezone
 import time, threading
 
-# Create your models here.
 class Mail(models.Model):
     subject = models.CharField(max_length=50, verbose_name='Тема')
     text = models.TextField(verbose_name='Текст')
     email = models.EmailField()
     second = models.SmallIntegerField(verbose_name='Задержка (сек.)')
     publish = models.DateTimeField(auto_now_add=True)
+    
+    @property
+    def published(self):
+        return self.publish + timedelta(seconds=self.second)
+
+    @property
+    def send(self):
+        return self.published < datetime.now(timezone.utc)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
