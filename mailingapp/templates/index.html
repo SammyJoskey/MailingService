@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form class="form-group" method="POST">
+                {% crispy form %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
